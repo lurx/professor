@@ -215,12 +215,10 @@ export default function Store({ children, board, ids, likes }: Props) {
     })
   );
 
-  const value = useMemo(() => ({ state, dispatch, board, ids, likes }), [
-    board,
-    ids,
-    likes,
-    state,
-  ]);
+  const value = useMemo(
+    () => ({ state, dispatch, board, ids, likes }),
+    [board, ids, likes, state]
+  );
 
   // Triggeres when 4 items have been selected,
   // Checks if selection is a category or not
